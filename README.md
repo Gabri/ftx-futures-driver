@@ -33,11 +33,18 @@ import_candles_drivers = {
 }
 ```
 
-Now I should be able to run import candles from FTX:
+Now I should be able to run import candles from FTX (in this example for Perpetual):
 
 ```sh
-jesse import-candles 'FTXFutures' 'BTC-USDT' '2012-06-04'
+jesse import-candles 'FTX Futures' 'BTC-USDT' '2012-06-04'
 ```
+
+In this example for an expiring future:
+
+```sh
+jesse import-candles 'FTX Futures' 'BTC-0924' '2012-06-04'
+```
+
 
 ### Add new config values for running backtests
 Usually the reason for importing candles in the first place is to run backtests on them. So we need to tell Jesse where to find the config values for our newly added exchange in order for it run backtests on it. 
@@ -45,7 +52,7 @@ Usually the reason for importing candles in the first place is to run backtests 
 We can do that by opening `config.py` and coping and pasting values from an existing exchange such as `Binance Futures` and changing the values according to our needs for out exchange:
 ```py
 # https://www.ftx.com
-'FTX': {
+'FTX Futures': {
     'fee': 0.0004,
 
     # backtest mode only: accepted are 'spot' and 'futures'
@@ -61,7 +68,6 @@ We can do that by opening `config.py` and coping and pasting values from an exis
     # used for spot exchange only
     'assets': [
         {'asset': 'USDT', 'balance': 10_000},
-        {'asset': 'BTC', 'balance': 0},
     ],
 },
 ```
