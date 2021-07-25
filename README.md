@@ -1,6 +1,10 @@
 # FTX FUTURES plugin for Jesse
 
-This is the initial release of the FTX FUTURES driver for Jesse. At the moment, it is only meant for importing candles and running backtests. 
+This is the initial release of the FTX Futures driver for Jesse.
+At the moment:
+* it is only meant for importing candles and running backtests
+* it supports only Perpetual futures (*-PERP)
+
 
 ## Installation 
 Install by running:
@@ -39,7 +43,7 @@ Now I should be able to run import candles from FTX (in this example for Perpetu
 jesse import-candles 'FTX Futures' 'BTC-USDT' '2012-06-04'
 ```
 
-In this example for an expiring future:
+In this example for an expiring future (*it won't work on baktesting for now*):
 
 ```sh
 jesse import-candles 'FTX Futures' 'BTC-0924' '2012-06-04'
@@ -53,7 +57,7 @@ We can do that by opening `config.py` and coping and pasting values from an exis
 ```py
 # https://www.ftx.com
 'FTX Futures': {
-    'fee': 0.0004,
+    'fee': 0.0006,
 
     # backtest mode only: accepted are 'spot' and 'futures'
     'type': 'futures',

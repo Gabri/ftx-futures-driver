@@ -13,8 +13,8 @@ with open("README.md", "r", encoding="utf-8") as f:
 setup(
     name='jesse-ftx-futures',
     version=VERSION,
-    author="Saleh Mir",
-    author_email="algo@hey.com",
+    author="Gabri",
+    author_email="stramaz.com@gmail.com",
     packages=find_packages(),
     description=DESCRIPTION,
     long_description=long_description,
